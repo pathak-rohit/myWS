@@ -1,0 +1,309 @@
+import React, { useState } from 'react';
+import { Card } from '../components/ui/card';
+import emailjs from 'emailjs-com';
+import './ContactForm.css';
+import { 
+  Mail,
+  Linkedin,
+  Boxes,
+  Cloud,
+  Brain,
+  GraduationCap,
+  Building2,
+  Briefcase,
+} from 'lucide-react';
+
+export const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Use EmailJS to send the form data
+    emailjs.send(
+      'service_zgi37dr', // Replace with your EmailJS service ID
+      'template_0jpoxc5', // Replace with your EmailJS template ID
+      {
+       from_name: formData.name,
+       from_email: formData.email,
+       message: formData.message
+      },
+      'tzAECZGPu-mQ2uEXr' // Replace with your EmailJS user ID
+    ).then((result) => {
+      console.log('Form submitted:', result.text);
+      setIsSubmitted(true);
+    }, (error) => {
+      console.error('Error:', error.text);
+    });
+
+    setFormData({ name: '', email: '', message: '' });
+  };
+
+  return (
+    <div className="contact-form-container">
+      {isSubmitted ? (
+        <div className="thank-you-message">
+          <h2>Thank you for reaching out!</h2>
+          <p>I will get back to you as soon as possible.</p>
+        </div>
+      ) : (
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <h2 className="form-title">Contact Me</h2>
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="form-input"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="form-input"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              className="form-textarea"
+            />
+          </div>
+          <button type="submit" className="form-button">Send Message</button>
+        </form>
+      )}
+    </div>
+  );
+};
+
+const Timeline = () => {
+  const timelineEvents = [
+    {
+      year: "2022-2024",
+      title: "Driving Cloud Migration & AI Initiatives",
+      description: "Driving AI enhancements and cloud migration to multi-tenant PaaS on MS Azure",
+      icon: Brain
+    },
+    {
+      year: "2018-2022",
+      title: "Product Owner & Leader for Major Overhaul of Smart 3D",
+      description: "Led the end-to-end modernization of Smart 3D, including a complete migration to new technology and a major UX redesign. Achieved aggressive milestones and timelines while maintaining high quality standards. Voice of the Customer Award.",
+      icon: Briefcase
+    },
+	{
+      year: "2018",
+      title: "Product Management Role Offered Again — Requested Transfer to India",
+      description: "Relocated to India to lead core initiatives for the flagship product.",
+      icon: Briefcase
+    },
+	{
+      year: "2015",
+      title: "Offered Role in Product Management",
+      description: "Recognized for strong technical knowledge and leadership potential but chose to continue building technical expertise.",
+      icon: Briefcase
+    },
+    {
+      year: "2013",
+      title: "Joined Hexagon AB",
+      description: "Top support analyst for one of the world's most complex software products - Intergraph Smart 3D.",
+      icon: Building2
+    },
+    {
+      year: "2013",
+      title: "Master's Degree",
+      description: "Graduated from from one of America's top engineering schools (NC State)",
+      icon: GraduationCap
+    },
+    {
+      year: "2009-2011",
+      title: "Process Engineer at Nestle",
+      description: "Process Control, LEAN, Six Sigma",
+      icon: Building2
+    },
+    {
+      year: "2009",
+      title: "Bachelor's Degree",
+      description: "Graduated from one of India's top engineering colleges (NIT Rourkela)",
+      icon: GraduationCap
+    }
+  ];
+
+  return (
+    <div className="space-y-8">
+      {timelineEvents.map((event, index) => {
+        const EventIcon = event.icon;
+        return (
+          <div key={index} className="relative flex items-start gap-4">
+            <div className="flex-none">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100">
+                <EventIcon className="w-5 h-5 text-gray-600" />
+              </div>
+            </div>
+            <div className="flex-1">
+              <div className="text-sm font-medium text-gray-500">{event.year}</div>
+              <h3 className="mt-1 text-lg font-medium">{event.title}</h3>
+              <p className="mt-1 text-gray-600">{event.description}</p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+const MinimalWebsite = () => {
+  const [activeSection, setActiveSection] = useState('about');
+
+  const projects = [
+    {
+      title: "Enterprise Software Modernization",
+      description: "Modernizing the world's #1 enterprise level design software. Creating new user interaction paradigms, improving productivity by leaps and bounds.",
+      icon: Boxes
+    },
+    {
+      title: "Cloud Migration",
+      description: "Moving applications to the cloud hosted on an in-house PaaS on top of MS Azure.",
+      icon: Cloud
+    },
+    {
+      title: "AI/ML Integration",
+      description: "Using Artificial Intelligence and Machine Learning to automate complex workflows and speed up design.",
+      icon: Brain
+    }
+  ];
+
+  return (
+    <div className="w-full max-w-2xl mx-auto space-y-8 p-4">
+      <nav className="flex justify-center space-x-8 py-6">
+        {['about', 'work', 'contact'].map(section => (
+          <button
+            key={section}
+            onClick={() => setActiveSection(section)}
+            className={`text-sm uppercase tracking-wider ${
+              activeSection === section 
+                ? 'text-black border-b border-black' 
+                : 'text-gray-500 hover:text-black'
+            }`}
+          >
+            {section}
+          </button>
+        ))}
+      </nav>
+
+      <div className="px-4">
+        {activeSection === 'about' && (
+          <div className="space-y-12">
+            <div className="space-y-6">
+              <h1 className="text-3xl font-light">Hello, I am Rohit Pathak.</h1>
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <p>
+                  I'm a Senior Product Manager currently working with the Asset Lifecycle Intelligence Division of the Swedish Technology Firm Hexagon AB -- building the next generation of 'Smart3D', one of the world's most complex enterprise level design software products.
+                </p>
+                <p>
+                  It is used for the end to end design and digital twinning of large scale industrial facilities, for example, an oil refinery or a nuclear power plant. This is perhaps one of the coolest software products you have never heard of!
+				  Unless you work in the oil and gas or heavy engineering industry.
+                </p>
+                <p>
+                  If you are a recruiter, you can find my LinkedIn at the bottom of the page. 
+				  You can also scroll down to see my professional journey so far.
+                </p>
+                <p className="text-gray-500 italic">
+                  This website is still a work in progress.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <h2 className="text-2xl font-light">Professional Journey</h2>
+              <Timeline />
+            </div>
+          </div>
+        )}
+
+        {activeSection === 'work' && (
+          <div className="space-y-8">
+            <h2 className="text-2xl font-light">Current Projects</h2>
+            <div className="space-y-6">
+              {projects.map((project, index) => {
+                const ProjectIcon = project.icon;
+                return (
+                  <Card key={index} className="p-6 hover:shadow-md transition-shadow">
+                    <div className="flex items-start space-x-4">
+                      <div className="mt-1">
+                        <ProjectIcon className="w-6 h-6 text-gray-400" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-medium mb-2">{project.title}</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                          {project.description}
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {activeSection === 'contact' && (
+          <div className="space-y-6">
+            <h2 className="text-2xl font-light">Get in Touch</h2>
+            <p className="text-gray-600 leading-relaxed">
+              Feel free to reach out if you'd like to talk or just a friendly hello.
+            </p>
+			<div className="inline-flex items-center space-x-2 text-gray-600">
+              <Mail className="w-4 h-4" />
+              <span>write@rohitpathak.com</span>
+            </div>
+			<p>Or you could also fill up the form below and I will get back to you.</p>
+        <ContactForm />
+          </div>
+        )}
+      </div>
+
+      <footer className="py-8 flex justify-center">
+        <a 
+          href="https://www.linkedin.com/in/pathakrohit/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-400 hover:text-black transition-colors flex items-center space-x-2"
+        >
+          <Linkedin size={20} />
+          <span className="text-sm">LinkedIn</span>
+        </a>
+      </footer>
+    </div>
+  );
+};
+
+export default MinimalWebsite;
