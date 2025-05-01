@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Card } from '../components/ui/card';
 import emailjs from 'emailjs-com';
+import ProfessionalJourneyMap from './ProfessionalJourneyMap';
 import './ContactForm.css';
 import './AchievementsTable.css';
 import { 
@@ -425,14 +426,13 @@ const MinimalWebsite = () => {
         </div>
       </div>
 
-            <AchievementsTable />
+      <div className="space-y-12">
+  {/* Your existing content */}
+  
+  <ProfessionalJourneyMap />
+</div>
 
-            <div className="space-y-6">
-              <h2 className="text-2xl font-light">Professional Journey</h2>
-              <Timeline />
-            </div>
-
-           
+         
           </div>
         )}
 
