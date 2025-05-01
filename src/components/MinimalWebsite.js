@@ -417,7 +417,7 @@ const MinimalWebsite = () => {
             I am a PM building software that drives heavyweight engineering and large-scale infrastructure projects worldwide.
           </p>
           <p>
-            Here is a link to <a href="https://hexagon.com/products/intergraph-smart-3d" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Intergraph Smart 3D</a>
+            Here is a link to <a href="https://hexagon.com/products/intergraph-smart-3d" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">the product</a>
           </p>
           <p>
             If you are a recruiter, you can find my linkedin at the bottom of the page.
