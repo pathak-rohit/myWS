@@ -185,58 +185,72 @@ const ProfessionalJourneyMap = () => {
     }
   ];
 
-  // Skill lines configuration - fully mapped to all achievements
+  // Map years to x-coordinates
+  const yearToX = {
+    "2009": 100,
+    "2013": 160,
+    "2015": 260,
+    "2017": 360,
+    "2019": 460,
+    "2020": 520,
+    "2021": 580,
+    "2022": 640,
+    "2023": 700,
+    "2024": 760
+  };
+
+  // Skill lines configuration with improved spacing
   const skillLines = [
     { 
       name: "Product Leadership", 
       color: "#3b82f6", // blue
-      pathPoints: "M100,150 L200,150 L300,150 L450,150 L650,150 L750,150",
+      y: 140,
       stations: [
-        { x: 175, y: 150, year: "2015", label: "Product Role Offered", achievements: [] },
-        { x: 300, y: 150, year: "2018", label: "Product Management", achievements: [] },
-        { x: 400, y: 150, year: "2020", label: "Features Delivery", achievements: [1, 15, 16] },
-        { x: 500, y: 150, year: "2021", label: "Sales Enablement", achievements: [2] },
-        { x: 600, y: 150, year: "2022", label: "Product Leadership", achievements: [12] },
-        { x: 700, y: 150, year: "2023", label: "Strategic Direction", achievements: [] }
+        { x: yearToX["2015"], y: 140, year: "2015", label: "Product Role Offered", achievements: [] },
+        { x: yearToX["2017"], y: 140, year: "2017", label: "Product Management", achievements: [] },
+        { x: yearToX["2020"], y: 140, year: "2020", label: "Features Delivery", achievements: [1, 15, 16] },
+        { x: yearToX["2021"], y: 140, year: "2021", label: "Sales Enablement", achievements: [2] },
+        { x: yearToX["2022"], y: 140, year: "2022", label: "Product Leadership", achievements: [12] },
+        { x: yearToX["2023"], y: 140, year: "2023", label: "Strategic Direction", achievements: [] }
       ]
     },
     { 
       name: "Technology Modernization", 
       color: "#10b981", // emerald
-      pathPoints: "M100,250 L200,250 L350,250 L500,250 L650,250 L750,250",
+      y: 260,
       stations: [
-        { x: 150, y: 250, year: "2013", label: "Technical Support", achievements: [] },
-        { x: 250, y: 250, year: "2017", label: "Technical Expertise", achievements: [] },
-        { x: 350, y: 250, year: "2019", label: "UX Modernization", achievements: [5, 18] },
-        { x: 450, y: 250, year: "2020", label: "SAFe Implementation", achievements: [8] },
-        { x: 550, y: 250, year: "2021", label: "SDK Automation", achievements: [7, 13] },
-        { x: 650, y: 250, year: "2022", label: "Cloud Migration", achievements: [3] },
-        { x: 730, y: 250, year: "2023", label: "AI/ML Integration", achievements: [4, 6, 14] }
+        { x: yearToX["2013"], y: 260, year: "2013", label: "Technical Support", achievements: [] },
+        { x: yearToX["2017"], y: 260, year: "2017", label: "Technical Expertise", achievements: [] },
+        { x: yearToX["2019"], y: 260, year: "2019", label: "UX Modernization", achievements: [5, 18] },
+        { x: yearToX["2020"], y: 260, year: "2020", label: "SAFe Implementation", achievements: [8] },
+        { x: yearToX["2021"], y: 260, year: "2021", label: "SDK Automation", achievements: [7, 13] },
+        { x: yearToX["2022"], y: 260, year: "2022", label: "Cloud Migration", achievements: [3] },
+        { x: yearToX["2023"], y: 260, year: "2023", label: "AI/ML Integration", achievements: [4, 6, 14] }
       ]
     },
     { 
       name: "Client Success", 
       color: "#8b5cf6", // violet
-      pathPoints: "M100,350 L250,350 L400,350 L550,350 L650,350 L750,350",
+      y: 380,
       stations: [
-        { x: 175, y: 350, year: "2015", label: "Client Support", achievements: [] },
-        { x: 325, y: 350, year: "2019", label: "Knowledge Management", achievements: [18] },
-        { x: 400, y: 350, year: "2020", label: "Advisory Boards", achievements: [16] },
-        { x: 500, y: 350, year: "2021", label: "Client Workshops", achievements: [2] },
-        { x: 600, y: 350, year: "2022", label: "Fortune 500 Advisor", achievements: [9, 10, 17] },
-        { x: 700, y: 350, year: "2023", label: "Enterprise Deployments", achievements: [] }
+        { x: yearToX["2015"], y: 380, year: "2015", label: "Client Support", achievements: [] },
+        { x: yearToX["2019"], y: 380, year: "2019", label: "Knowledge Management", achievements: [18] },
+        { x: yearToX["2020"], y: 380, year: "2020", label: "Advisory Boards", achievements: [16] },
+        { x: yearToX["2021"], y: 380, year: "2021", label: "Client Workshops", achievements: [2] },
+        { x: yearToX["2022"], y: 380, year: "2022", label: "Fortune 500 Advisor", achievements: [9, 10, 17] },
+        { x: yearToX["2023"], y: 380, year: "2023", label: "Enterprise Deployments", achievements: [] }
       ]
     },
     { 
       name: "Data & Analytics", 
       color: "#ec4899", // pink
-      pathPoints: "M250,450 L375,450 L475,450 L575,450 L675,450 L750,450",
+      y: 500,
       stations: [
-        { x: 300, y: 450, year: "2018", label: "Process Optimization", achievements: [] },
-        { x: 400, y: 450, year: "2020", label: "Profile Analysis", achievements: [19] },
-        { x: 500, y: 450, year: "2021", label: "Telemetry Dashboards", achievements: [11, 13] },
-        { x: 600, y: 450, year: "2022", label: "Customer Insights", achievements: [12] },
-        { x: 700, y: 450, year: "2023", label: "AI/ML Analytics", achievements: [6, 14] }
+        { x: yearToX["2018"], y: 500, year: "2018", label: "Process Optimization", achievements: [] },
+        { x: yearToX["2020"], y: 500, year: "2020", label: "Profile Analysis", achievements: [19] },
+        { x: yearToX["2021"], y: 500, year: "2021", label: "Telemetry Dashboards", achievements: [11, 13] },
+        { x: yearToX["2022"], y: 500, year: "2022", label: "Customer Insights", achievements: [12] },
+        { x: yearToX["2023"], y: 500, year: "2023", label: "AI/ML Analytics", achievements: [6, 14] }
       ]
     }
   ];
@@ -244,19 +258,7 @@ const ProfessionalJourneyMap = () => {
   // Timeline markers (years)
   const timelineYears = [2013, 2015, 2017, 2019, 2020, 2021, 2022, 2023, 2024];
 
-  // Get X coordinate for a given year
-  const getXForYear = (year) => {
-    const startYear = 2013;
-    const endYear = 2024;
-    const startX = 100;
-    const endX = 750;
-    const yearRange = endYear - startYear;
-    const pixelsPerYear = (endX - startX) / yearRange;
-    
-    return startX + (parseInt(year) - startYear) * pixelsPerYear;
-  };
-
-  // Find achievement by ID
+  // Get achievement by ID
   const getAchievementById = (id) => {
     return achievements.find(a => a.id === id);
   };
@@ -271,29 +273,37 @@ const ProfessionalJourneyMap = () => {
     });
   };
 
+  // Toggle education degrees
+  const [selectedDegree, setSelectedDegree] = useState(null);
+
+  // Reset everything when Show All is clicked
+  const showAll = () => {
+    setHighlightedSkill(null);
+    setSelectedStation(null);
+    setSelectedDegree(null);
+  };
+
   // Close achievement details
   const closeDetails = () => {
     setSelectedStation(null);
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg">
+    <div className="bg-white rounded-lg p-4 mb-8">
       <h2 className="text-2xl font-light mb-2">Professional Journey Map</h2>
       <p className="text-gray-600 mb-4">Explore my career progression across different skill domains</p>
       
-      <div className="flex flex-wrap gap-4 mb-6">
+      <div className="flex flex-wrap gap-2 mb-6">
         {skillLines.map((line, i) => (
           <button 
             key={i} 
-            className="flex items-center gap-2 px-3 py-1 rounded-full cursor-pointer transition-all"
+            className="flex items-center gap-2 px-3 py-1 rounded-full cursor-pointer transition-all border"
             style={{ 
-              backgroundColor: `${line.color}20`,
+              backgroundColor: highlightedSkill === line.name ? `${line.color}30` : `${line.color}10`,
               borderColor: line.color,
-              borderWidth: 1,
               boxShadow: highlightedSkill === line.name ? `0 0 0 2px ${line.color}40` : 'none'
             }}
-            onMouseEnter={() => setHighlightedSkill(line.name)}
-            onMouseLeave={() => setHighlightedSkill(null)}
+            onClick={() => setHighlightedSkill(line.name === highlightedSkill ? null : line.name)}
           >
             <span 
               className="w-3 h-3 rounded-full" 
@@ -304,25 +314,25 @@ const ProfessionalJourneyMap = () => {
         ))}
         <button 
           className="flex items-center gap-2 px-3 py-1 rounded-full cursor-pointer transition-all bg-gray-100 border border-gray-300"
-          onClick={() => setHighlightedSkill(null)}
+          onClick={showAll}
         >
           <span className="text-sm font-medium">Show All</span>
         </button>
       </div>
       
       <div className="relative border rounded-lg shadow-sm overflow-hidden">
-        <svg width="100%" height="580" viewBox="0 0 850 580" preserveAspectRatio="xMidYMid meet">
+        <svg width="100%" height="650" viewBox="0 0 850 650" preserveAspectRatio="xMidYMid meet">
           {/* Background grid */}
           <g className="timeline-grid">
             {timelineYears.map((year, i) => {
-              const x = getXForYear(year);
+              const x = yearToX[year.toString()];
               return (
                 <g key={year}>
                   <line 
                     x1={x} 
                     y1="60" 
                     x2={x} 
-                    y2="520" 
+                    y2="580" 
                     stroke="#e5e7eb" 
                     strokeWidth="1" 
                     strokeDasharray={year % 2 === 0 ? "none" : "4,4"} 
@@ -340,13 +350,13 @@ const ProfessionalJourneyMap = () => {
               );
             })}
             
-            {/* Horizontal section separators */}
-            {[200, 300, 400].map((y, i) => (
+            {/* Horizontal guide lines */}
+            {[140, 260, 380, 500].map((y, i) => (
               <line 
                 key={i} 
                 x1="90" 
                 y1={y} 
-                x2="760" 
+                x2="770" 
                 y2={y} 
                 stroke="#e5e7eb" 
                 strokeWidth="1" 
@@ -358,12 +368,11 @@ const ProfessionalJourneyMap = () => {
           {/* Section labels */}
           <g className="section-labels">
             {skillLines.map((line, i) => {
-              const y = 150 + i * 100;
               return (
                 <text 
                   key={i} 
                   x="60" 
-                  y={y} 
+                  y={line.y} 
                   textAnchor="end" 
                   alignmentBaseline="middle" 
                   className="text-xs font-semibold" 
@@ -379,6 +388,12 @@ const ProfessionalJourneyMap = () => {
           {/* Skill lines */}
           {skillLines.map((line, lineIndex) => {
             const isHighlighted = highlightedSkill === line.name || highlightedSkill === null;
+            
+            // Create path points from stations
+            const pathPoints = line.stations.map((station, i) => 
+              `${i === 0 ? 'M' : 'L'}${station.x},${station.y}`
+            ).join(' ');
+            
             return (
               <g 
                 key={lineIndex} 
@@ -388,10 +403,10 @@ const ProfessionalJourneyMap = () => {
               >
                 {/* Line path */}
                 <path 
-                  d={line.pathPoints} 
+                  d={pathPoints} 
                   fill="none" 
                   stroke={line.color} 
-                  strokeWidth={isHighlighted ? 6 : 4} 
+                  strokeWidth={isHighlighted ? 5 : 3} 
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   style={{ transition: "stroke-width 0.2s ease" }}
@@ -412,7 +427,7 @@ const ProfessionalJourneyMap = () => {
                       <circle 
                         cx={station.x} 
                         cy={station.y} 
-                        r={hasAchievements ? 10 : 6}
+                        r={hasAchievements ? 8 : 6}
                         fill="white" 
                         stroke={line.color} 
                         strokeWidth={hasAchievements ? 3 : 2}
@@ -424,7 +439,7 @@ const ProfessionalJourneyMap = () => {
                         <circle 
                           cx={station.x} 
                           cy={station.y} 
-                          r={5}
+                          r={4}
                           fill={line.color}
                         />
                       )}
@@ -447,29 +462,10 @@ const ProfessionalJourneyMap = () => {
                             className="text-xs"
                             fill="#6b7280"
                           >
-                            {station.achievements.length} achievement{station.achievements.length > 1 ? 's' : ''}
+                            {station.achievements.length} {station.achievements.length === 1 ? 'achievement' : 'achievements'}
                           </text>
                         )}
                       </g>
-                      
-                      {/* Achievement dots */}
-                      {hasAchievements && station.achievements.map((achievementId, i) => {
-                        const angle = (i * (360 / station.achievements.length) - 90) * (Math.PI / 180);
-                        const radius = 18;
-                        const dotX = station.x + Math.cos(angle) * radius;
-                        const dotY = station.y + Math.sin(angle) * radius;
-                        
-                        return (
-                          <circle 
-                            key={i}
-                            cx={dotX}
-                            cy={dotY}
-                            r={4}
-                            fill={line.color}
-                            fillOpacity={0.7}
-                          />
-                        );
-                      })}
                     </g>
                   );
                 })}
@@ -477,61 +473,33 @@ const ProfessionalJourneyMap = () => {
             );
           })}
           
-          {/* Connections between related stations (transfer points) */}
-          <g className="transfer-connections">
-            {[
-              { x1: 350, y1: 250, x2: 400, y2: 350 }, // UX Modernization to Advisory Boards
-              { x1: 400, y1: 150, x2: 400, y2: 350 }, // Features Delivery to Advisory Boards
-              { x1: 400, y1: 350, x2: 400, y2: 450 }, // Advisory Boards to Profile Analysis
-              { x1: 500, y1: 150, x2: 500, y2: 250 }, // Sales Enablement to SDK Automation
-              { x1: 500, y1: 250, x2: 500, y2: 350 }, // SDK Automation to Client Workshops
-              { x1: 500, y1: 350, x2: 500, y2: 450 }, // Client Workshops to Telemetry Dashboards
-              { x1: 600, y1: 150, x2: 600, y2: 250 }, // Product Leadership to Cloud Migration
-              { x1: 600, y1: 250, x2: 600, y2: 350 }, // Cloud Migration to Fortune 500 Advisor
-              { x1: 600, y1: 350, x2: 600, y2: 450 }, // Fortune 500 Advisor to Customer Insights
-              { x1: 700, y1: 250, x2: 700, y2: 350 }, // AI/ML Integration to Enterprise Deployments
-              { x1: 700, y1: 350, x2: 700, y2: 450 }, // Enterprise Deployments to AI/ML Analytics
-            ].map((conn, i) => (
-              <line 
-                key={i}
-                x1={conn.x1}
-                y1={conn.y1}
-                x2={conn.x2}
-                y2={conn.y2}
-                stroke="#d1d5db"
-                strokeWidth="2"
-                strokeDasharray="4,4"
-              />
-            ))}
-          </g>
-          
-          {/* Career highlights from timeline */}
+          {/* Career highlights */}
           <g className="career-highlights">
             {[
-              { x: 150, y: 250, label: "Joined Hexagon", year: "2013" },
-              { x: 300, y: 150, label: "Product Management", year: "2018" },
-              { x: 650, y: 250, label: "Smart 3D Overhaul", year: "2022" },
-              { x: 730, y: 250, label: "Cloud & AI Initiatives", year: "2023" }
+              { x: yearToX["2013"], y: 200, label: "Joined Hexagon", year: "2013" },
+              { x: yearToX["2017"], y: 100, label: "Product Management", year: "2018" },
+              { x: yearToX["2022"], y: 200, label: "Smart 3D Overhaul", year: "2022" },
+              { x: yearToX["2023"], y: 200, label: "Cloud & AI Initiatives", year: "2023" }
             ].map((highlight, i) => (
               <g key={i} className="career-highlight">
                 <line 
                   x1={highlight.x} 
-                  y1={highlight.y - 35} 
+                  y1={highlight.y - 25} 
                   x2={highlight.x} 
-                  y2={highlight.y - 15} 
+                  y2={highlight.y - 10} 
                   stroke="#6b7280" 
                   strokeWidth="1" 
                 />
                 <circle 
                   cx={highlight.x} 
-                  cy={highlight.y - 40} 
-                  r={6}
+                  cy={highlight.y - 30} 
+                  r={5}
                   fill="#6b7280" 
                 />
                 <rect 
-                  x={highlight.x - 50} 
-                  y={highlight.y - 70} 
-                  width="100" 
+                  x={highlight.x - 60} 
+                  y={highlight.y - 60} 
+                  width="120" 
                   height="25" 
                   rx="4"
                   fill="#f3f4f6"
@@ -539,7 +507,7 @@ const ProfessionalJourneyMap = () => {
                 />
                 <text 
                   x={highlight.x} 
-                  y={highlight.y - 55} 
+                  y={highlight.y - 45} 
                   textAnchor="middle" 
                   className="text-xs font-medium" 
                   fill="#374151"
@@ -550,48 +518,149 @@ const ProfessionalJourneyMap = () => {
             ))}
           </g>
           
-          {/* Education markers */}
-          <g className="education-markers">
-            {[
-              { x: 100, y: 530, label: "Bachelor's Degree", year: "2009" },
-              { x: 150, y: 530, label: "Master's Degree", year: "2013" }
-            ].map((edu, i) => (
-              <g key={i} className="education-marker">
-                <circle 
-                  cx={edu.x} 
-                  cy={edu.y} 
-                  r={8}
-                  fill="#f3f4f6"
-                  stroke="#9ca3af"
-                  strokeWidth="1"
+          {/* Education section */}
+          <g className="education-section">
+            <text 
+              x="60" 
+              y="600" 
+              textAnchor="end" 
+              className="text-xs font-semibold" 
+              fill="#6b7280"
+            >
+              Education
+            </text>
+            
+            {/* Bachelor's degree */}
+            <circle 
+              cx={yearToX["2009"]} 
+              cy="600" 
+              r={selectedDegree === "bachelor" ? 11 : 8}
+              fill={selectedDegree === "bachelor" ? "#f3f4f6" : "white"} 
+              stroke="#9ca3af"
+              strokeWidth={selectedDegree === "bachelor" ? 2 : 1}
+              onClick={() => setSelectedDegree(selectedDegree === "bachelor" ? null : "bachelor")}
+              className="cursor-pointer"
+            />
+            <text 
+              x={yearToX["2009"]} 
+              y="630" 
+              textAnchor="middle" 
+              className="text-xs" 
+              fill="#4b5563"
+            >
+              Bachelor's Degree
+            </text>
+            <text 
+              x={yearToX["2009"]} 
+              y="645" 
+              textAnchor="middle" 
+              className="text-xs" 
+              fill="#6b7280"
+            >
+              2009
+            </text>
+            
+            {/* Master's degree */}
+            <circle 
+              cx={yearToX["2013"]} 
+              cy="600" 
+              r={selectedDegree === "master" ? 11 : 8}
+              fill={selectedDegree === "master" ? "#f3f4f6" : "white"} 
+              stroke="#9ca3af"
+              strokeWidth={selectedDegree === "master" ? 2 : 1}
+              onClick={() => setSelectedDegree(selectedDegree === "master" ? null : "master")}
+              className="cursor-pointer"
+            />
+            <text 
+              x={yearToX["2013"]} 
+              y="630" 
+              textAnchor="middle" 
+              className="text-xs" 
+              fill="#4b5563"
+            >
+              Master's Degree
+            </text>
+            <text 
+              x={yearToX["2013"]} 
+              y="645" 
+              textAnchor="middle" 
+              className="text-xs" 
+              fill="#6b7280"
+            >
+              2013
+            </text>
+            
+            {/* Education details */}
+            {selectedDegree === "bachelor" && (
+              <g>
+                <rect 
+                  x={yearToX["2009"] - 80} 
+                  y="550" 
+                  width="160" 
+                  height="40" 
+                  rx="4"
+                  fill="white"
+                  stroke="#d1d5db"
                 />
                 <text 
-                  x={edu.x} 
-                  y={edu.y + 25} 
+                  x={yearToX["2009"]} 
+                  y="570" 
                   textAnchor="middle" 
-                  className="text-xs" 
-                  fill="#4b5563"
+                  className="text-xs font-medium" 
+                  fill="#374151"
                 >
-                  {edu.label}
+                  NIT Rourkela
                 </text>
                 <text 
-                  x={edu.x} 
-                  y={edu.y + 40} 
+                  x={yearToX["2009"]} 
+                  y="585" 
                   textAnchor="middle" 
                   className="text-xs" 
                   fill="#6b7280"
                 >
-                  {edu.year}
+                  Engineering
                 </text>
               </g>
-            ))}
+            )}
+            
+            {selectedDegree === "master" && (
+              <g>
+                <rect 
+                  x={yearToX["2013"] - 80} 
+                  y="550" 
+                  width="160" 
+                  height="40" 
+                  rx="4"
+                  fill="white"
+                  stroke="#d1d5db"
+                />
+                <text 
+                  x={yearToX["2013"]} 
+                  y="570" 
+                  textAnchor="middle" 
+                  className="text-xs font-medium" 
+                  fill="#374151"
+                >
+                  NC State University
+                </text>
+                <text 
+                  x={yearToX["2013"]} 
+                  y="585" 
+                  textAnchor="middle" 
+                  className="text-xs" 
+                  fill="#6b7280"
+                >
+                  Engineering
+                </text>
+              </g>
+            )}
           </g>
         </svg>
         
         {/* Achievement details overlay */}
         {selectedStation && (
-          <div className="absolute top-0 left-0 w-full h-full bg-white bg-opacity-90 flex items-center justify-center">
-            <div className="bg-white rounded-lg shadow-lg p-6 max-w-md">
+          <div className="absolute top-0 left-0 w-full h-full bg-white bg-opacity-90 flex items-center justify-center p-4">
+            <div className="bg-white rounded-lg shadow-lg p-5 max-w-md w-full">
               <div 
                 className="w-full h-2 rounded-full mb-4" 
                 style={{ backgroundColor: selectedStation.line.color }}
@@ -600,13 +669,17 @@ const ProfessionalJourneyMap = () => {
               <h3 className="text-xl font-medium mb-1">{selectedStation.station.label}</h3>
               <p className="text-gray-500 mb-4">{selectedStation.station.year} • {selectedStation.line.name}</p>
               
-              <div className="space-y-4 mb-4">
+              <div className="space-y-4 mb-6 max-h-80 overflow-y-auto">
                 {selectedStation.station.achievements.map(achievementId => {
                   const achievement = getAchievementById(achievementId);
                   if (!achievement) return null;
                   
                   return (
-                    <div key={achievement.id} className="border-l-4 pl-4 py-1" style={{ borderColor: selectedStation.line.color }}>
+                    <div 
+                      key={achievement.id} 
+                      className="border-l-4 pl-4 py-2" 
+                      style={{ borderColor: selectedStation.line.color }}
+                    >
                       <p className="text-gray-800">{achievement.achievement}</p>
                       <div className="flex gap-2 mt-2">
                         <span className="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-800">
@@ -629,13 +702,13 @@ const ProfessionalJourneyMap = () => {
         )}
       </div>
       
-      <div className="mt-4 bg-gray-50 rounded-lg p-4 text-sm text-gray-600">
+      <div className="mt-4 bg-gray-50 rounded-lg p-3 text-sm text-gray-600">
         <h3 className="font-medium text-gray-800 mb-2">How to use this map</h3>
         <ul className="list-disc pl-5 space-y-1">
-          <li>Hover over skill lines to highlight specific career paths</li>
+          <li>Click on skill buttons at the top to highlight specific career paths</li>
           <li>Click on stations with solid centers to view achievement details</li>
-          <li>Follow the connections between stations to see how skills are related</li>
-          <li>Use the buttons at the top to filter by skill domain</li>
+          <li>Click on the education circles to see degree details</li>
+          <li>Click "Show All" to reset the view</li>
         </ul>
       </div>
     </div>
