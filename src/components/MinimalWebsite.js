@@ -414,10 +414,13 @@ const MinimalWebsite = () => {
         <h1 className="text-3xl font-light">Hello, I am Rohit Pathak.</h1>
         <div className="space-y-4 text-gray-600 leading-relaxed">
           <p>
-            Hi, I am Rohit Pathak. I am a product manager building software that drives heavyweight engineering and large-scale infrastructure projects worldwide.
+            I am a PM building software that drives heavyweight engineering and large-scale infrastructure projects worldwide.
           </p>
           <p>
-            If you are a recruiter, you can find my linkedin at the bottom of the page. 
+            Here is a link to <a href="https://hexagon.com/products/intergraph-smart-3d" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Intergraph Smart 3D</a>
+          </p>
+          <p>
+            If you are a recruiter, you can find my linkedin at the bottom of the page.
           </p>
         </div>
       </div>
