@@ -408,27 +408,19 @@ const MinimalWebsite = () => {
       </nav>
 
       <div className="px-4">
-        {activeSection === 'about' && (
-          <div className="space-y-12">
-            <div className="space-y-6">
-              <h1 className="text-3xl font-light">Hello, I am Rohit Pathak.</h1>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>
-                  I'm a Senior Product Manager currently working with the Asset Lifecycle Intelligence Division of the Swedish Technology Firm Hexagon AB -- building the next generation of 'Smart3D', one of the world's most complex enterprise level design software products.
-                </p>
-                <p>
-                  It is used for the end to end design and digital twinning of large scale industrial facilities, for example, an oil refinery or a nuclear power plant. This is perhaps one of the coolest software products you have never heard of!
-				  Unless you work in the oil and gas or heavy engineering industry.
-                </p>
-                <p>
-                  If you are a recruiter, you can find my LinkedIn at the bottom of the page. 
-				  You can also scroll down to see my professional journey so far.
-                </p>
-                <p className="text-gray-500 italic">
-                  This website is still a work in progress.
-                </p>
-              </div>
-            </div>
+  {activeSection === 'about' && (
+    <div className="space-y-12">
+      <div className="space-y-6">
+        <h1 className="text-3xl font-light">Hello, I am Rohit Pathak.</h1>
+        <div className="space-y-4 text-gray-600 leading-relaxed">
+          <p>
+            Hi, I am Rohit Pathak. I am a product manager building software that drives heavyweight engineering and large-scale infrastructure projects worldwide.
+          </p>
+          <p>
+            If you are a recruiter, you can find my linkedin at the bottom of the page. 
+          </p>
+        </div>
+      </div>
 
             <AchievementsTable />
 
