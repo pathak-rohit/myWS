@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Card } from '../components/ui/card';
 import emailjs from 'emailjs-com';
+import VerticalJourneyMap from './VerticalJourneyMap';
 import ProfessionalJourneyMap from './ProfessionalJourneyMap';
 import './ContactForm.css';
 import './AchievementsTable.css';
