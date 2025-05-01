@@ -430,12 +430,14 @@ const MinimalWebsite = () => {
               </div>
             </div>
 
+            <AchievementsTable />
+
             <div className="space-y-6">
               <h2 className="text-2xl font-light">Professional Journey</h2>
               <Timeline />
             </div>
-            
-            <AchievementsTable />
+
+           
           </div>
         )}
 
