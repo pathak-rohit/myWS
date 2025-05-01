@@ -429,7 +429,7 @@ const MinimalWebsite = () => {
       <div className="space-y-12">
   {/* Your existing content */}
   
-  <ProfessionalJourneyMap />
+  <VerticalJourneyMap />
 </div>
 
          
